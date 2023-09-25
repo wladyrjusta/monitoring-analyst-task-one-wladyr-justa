@@ -1,0 +1,5 @@
+from view.generate_graphics_checkout_1 import generate_graphics_checkout_1
+from view.generate_graphics_checkout_2 import generate_graphics_checkout_2
+
+generate_graphics_checkout_1()
+generate_graphics_checkout_2()
