@@ -1,39 +1,30 @@
-import matplotlib.pyplot as plt
-import mpld3
-from io import StringIO
+def generate_combined_html_page(graphic_data):
+    # Crie o cabeçalho HTML
+    html_content = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Gráficos</title>
+    </head>
+    <body>
+    """
 
+    # Adicione os gráficos base64 e legendas em tags <p> à página HTML
+    for data in graphic_data:
+        title = data['title']
+        image_base64 = data['image_base64']
+        description = data['description']
 
-def generate_html_graphic(dataframe, title):
-    plt.figure(figsize=(10, 6))
+        html_content += f"<h2>{title}</h2>"
+        html_content += (
+            f"<img src='data:image/png;base64,{image_base64}' alt='{title}'>"
+        )
+        html_content += f"<h2>{description}</h2>"
 
-    # Assume que a primeira coluna é a coluna X (eixo X)
-    x_column = dataframe.columns[0]
+    # Feche o corpo e o HTML
+    html_content += """
+    </body>
+    </html>
+    """
 
-    x_values = [f"{time}" for time in dataframe[x_column]]
-
-    # Assume que todas as outras colunas são colunas Y (eixo Y)
-    y_columns = dataframe.columns[1:]
-
-    for column in y_columns:
-        y_values = dataframe[column]
-        plt.bar(x_values, y_values, label=column)
-
-    plt.xlabel(x_column)
-    plt.ylabel("Values")
-    plt.title(title)
-    plt.legend()
-    plt.grid(True)
-
-    # Salvar o gráfico como um arquivo HTML
-    html_content = StringIO()
-
-    # Aplicar um formato de data/hora específico ao eixo X do gráfico HTML
-    ax = plt.gca()
-    ax.xaxis.set_major_formatter(plt.FixedFormatter(x_values))
-
-    mpld3.save_html(plt.gcf(), html_content)
-
-    # Fechar a figura atual
-    plt.close()
-
-    return html_content.getvalue()
+    return html_content
