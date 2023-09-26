@@ -18,19 +18,20 @@
  <ol start="2">
     <li>Navegue até o diretório do projeto:</li>
  </ol>
+ <pre><code>cd monitoring-analyst-task-one-wladyr-justa</code></pre>
 
 <h2>Criando um Ambiente Virtual (Recomendado)</h2>
 
 <p>Recomendamos que você crie e ative um ambiente virtual Python antes de instalar as dependências. Isso ajuda a isolar as dependências do projeto e evita conflitos com outras versões de pacotes Python instalados globalmente no seu sistema. Siga estas etapas:</p>
 <ol start="1">
 
- <pre><code>cd sales-monitoring-app</code></pre>
-
  <ol>
     <li>Crie um novo ambiente virtual:</li>
  </ol>
 
  <pre><code>python -m venv venv</code></pre>
+ <p>OU</p>
+  <pre><code>python3 -m venv venv</code></pre>
 
  <ol start="2">
    <li>Ative o ambiente virtual (no Windows):</li>
@@ -92,6 +93,3 @@
 <p>Vamos analisar os dados fornecidos e apresentar nossas conclusões. Além dos dados da planilha, faremos consultas SQL e criaremos gráficos a partir delas, tentando explicar o comportamento anômalo encontrado.</p>
 
 <p>No arquivo CSV, temos o número de vendas de caixas registradoras por hora, comparando as vendas por hora de hoje, ontem e a média de outros dias. Com isso, podemos analisar o comportamento de hoje e compará-lo com outros dias.</p>
-
-
-
