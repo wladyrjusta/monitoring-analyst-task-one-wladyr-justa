@@ -84,8 +84,6 @@
  <li>Página com gráficos da "checkout_2": <a href="http://localhost:5000/generate_graphic/checkout_2">http://localhost:5000/generate_graphic/checkout_2</a></li>
 </ul>
 
-<p><strong>Além disso, ao executar app.py, o aplicativo também criará arquivos PNG de cada gráfico nas pastas `graphics_checkout_1` e `graphics_checkout_2`.</strong></p>
-
 <h2>Explorando os Dados</h2>
 
 <p>Com dados hipotéticos de vendas em caixas registradoras, nosso objetivo é entender se há algum comportamento anômalo.</p>
